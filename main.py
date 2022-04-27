@@ -1,181 +1,173 @@
-'''
-El condicional If explica que,su funcion se basa en condiciones,es decir
-si algo sucede el comando if hace una cosa y si otra cosa sucede el condicional if hace otra
+"""
+FUNCIONES:
+Una funcion es un conjunto de instrucciones agrupadas
+en un nombre concreto que pueden reutilizarse invocando a
+la funcion tantas veces como sea necesario.
 
-Es decir si una condicion se cumple pasa una cosa,y si no se cumple pasa otra
+EJ:
 
-El condicional else ,es el que dara la intruccion si el condicional if no se cumple
+def nombreDeMiFuncion(parametros):
+    # BLOQUE / CONJUNTO DE INTRUSCCIONES
 
+nombreDeMiFuncion(mi_parametro)  #para invocarla se hace asi
+nombreDeMiFuncion(mi_parametro)
 
-# Condicional IF
-
-SI se_cumple_esta_condicion:
-   Ejecutar grupo de instrucciones
-SI NO:
-   Se ejecuitan otro grupo de instrucciones
-
-if condicion:
-    instrucciones
-else:
-    otras intrucciones
-
-# Operadores de comparacion
-
-== igual
-!= diferente
-< menor que
-> mayor que
-<= menor o igual que
->= mayor o igual que
-
-# Operadores logicos (son herramientas con las que se pueden hacer logicas,de forma diferente ,pero que pueden dar el mismo resultado segun se las emplee,variando de la comodida del desarrollador.En base al resultado que este quiera)
-
-and Y
-or o      
-! negacion
-not no
-
-'''
-
+"""
 
 # Ejemplo 1
 
 
 
-print("############# EJEMPLO 1 ##############")
-
-color = "rojo"
-#color = input("Adivina cual es mi color favorito: ") #aqui se utiliza la entrada para que el usuario ponga un color y el condicional if decida
-
-if color == "rojo": # el doble igual "==" se utiliza como comparador ,en este ejemplo compararia si color es igual a rojo se hace una cosa y si no otra,que en este caso lo es por que la variable de arriba asi lo determina "color = rojo"
-    print("Enhorabuena!!")
-    print("El color es Rojo")
-else:
-    print("El color NO es rojo")
-
-# Ejemplo 2
-
-print("\n############# EJEMPLO 2 ##############")
-
-year = 2020
-#year = int(input("¿En que año estamos? ")) #al poner el resultado int el numero que lo toma como texto ,se vuelve un numero con el que "if" puede realizar su operacion
-
-if year >= 2021:
-    print("Estamos de 2021 en adelante!! ")
-else:
-    print("Es un año anterior a 2021")
-
-    # Ejemplo 3
-
-print("\n############# EJEMPLO 3 ##############")
-
-nombre = "Victor Robles"
-ciudad = "Barcelona"
-continente = "oceanida"
-edad = 18
-mayoria_edad = 18
-
-if edad >= mayoria_edad:
-    print(f"{nombre} es mayor de edad!!")
-
-    if continente != "Europa":
-        print("El usuario no es europeo")        #se pueden anidar if dentro de otros if siempre que el de dentro este mas adelante que el anterior a el,y los else tienen que estar
-    else:                                        #con el if al que le correspondan para que no haya errores
-        print(f"es Europeo y de {ciudad}")
-
-else:
-    print(f"{nombre} No es mayor de edad")
 
 
-# Ejemplo 4
 
-print("\n############# EJEMPLO 4 ##############")
+print("##### EJEMPLO 1 ######")
 
-#dia = int(input("Introduce el numero del dia de la semana: "))
-dia = 2
-"""
-if dia == 1:
-    print("Es lunes")
-else:
-    if dia == 2:
-        print("Es martes")
+def muestraNombre():
+    print("Juan")
+    print("gabriel")
+    print("paco")
+    print("francisco")
+    print("aitor")
+    print("nestor")
+    print("\n")
+
+# Invocar funcion 
+
+muestraNombre()
+muestraNombre()
+muestraNombre()
+
+
+"""# Ejemplo 2:
+print("##### EJEMPLO 2 ######")
+
+
+def mostrarTuNombre(nombre, edad):
+    print(f"Tu nombre es: {nombre}")
+    
+    if edad >= 18:
+        print("Eres mayor de edad")
+                                               #un parametro es un dato que va en el parentesis que se pasa desde fuera adentro de la funcion,para 
+                                            #parametrizar la funcionalidad que hay dentro de una funcion.
+nombre = input("Introduce tu nombre: ")
+edad = int(input("Introduce tu edad: "))
+mostrarTuNombre(nombre, edad)   """
+
+
+# Ejemplo 3:
+print("##### EJEMPLO 3 ######")
+
+def tabla(numero):
+    print(f"Tabla de multiplicar del numero: {numero}")
+    for contador in range(11):
+        operacion = numero*contador
+        print(f"{numero}x{contador} = {operacion}")
+
+
+    print("\n")
+
+tabla(3)
+tabla(7)
+tabla(12)
+
+# Ejemplo 3.1:
+print("---------------------------------------------------------------")
+print("##### EJEMPLO 3.1 ######")
+for numero_tabla in range(1, 11):
+    tabla(numero_tabla)
+
+
+
+# Ejemplo 4:
+print("##### EJEMPLO 4 ######")
+
+# Parametros opcionales
+def getEmpleado(nombre, dni = None):     #esto es una forma de hacer que un parametro sea opcional para no tener que agregarlo obligatoriamente
+    print("Empleado")                     # se puede definir que parametros tienen que estar si o si ,o cuales pueden ser opcionales,si hay una funcion dni se volvera ese valor,pero si no la definimos tomara el predeterminado en este caso "None"
+    print(f"nombre: {nombre}")
+    
+    if dni != None:
+        print(f"Dni: {dni}")
+
+
+
+getEmpleado("gabriel", 43334343)
+
+# Ejemplo 5: parametros opcionales y return o devolver datos
+
+print("##### EJEMPLO 5 ######")
+
+def saludame(nombre):
+    saludo = f"Hola, saludos {nombre}"
+
+    return saludo   #con el return se define que es lo que se va a devolver,cuando se pida la funcion,es como una especie de print pero para las funciones
+
+print(saludame("Victor robles"))
+
+
+saludame("Gabriel")
+
+# Ejemplo 6: usar el return para devolver
+
+print("##### EJEMPLO 6 ######")
+
+def calculadora(numero1, numero2, basicas = False):
+    
+     
+    suma = numero1 +  numero2
+    resta = numero1 - numero2
+    multi = numero1 * numero2
+    division = numero1 / numero2
+
+    cadena = ""
+    
+    if basicas != False:   
+        cadena += "Suma:" + str(suma)
+        cadena += "\n"
+        cadena += "resta: " + str(resta)
+        cadena += "\n"                          #aqui lo que se hace es que cadena vale "" es decir nada practicamente,y al hacer cadena += algo, en este caso suma resta etc,se le esta sumando contenido a cadena,se le esta dando mas variables por asi decirlo ,se le esta concatenando mas cosas
     else:
-        if dia == 3:
-            print("Es miercoles")               #esta estructura esta mas desordenada a comparacion de la de abajo,y es mas dificil de leer
-        else:
-            if dia == 4:
-                print("El dia es Jueves") 
-            else:
-                if dia == 5:
-                    print("El dia es Viernes")
-                else:
-                    print("Ya es finde semana :D !!")
+        cadena += "multiplicacion: " + str(multi)
+        cadena += "\n"
+        cadena += "Division: " + str(division)
 
-"""
+    return cadena
 
-if dia == 1:
-    print("Es lunes")
-elif dia == 2:
-    print("Es Martes")
-elif dia == 3:
-    print("Es miercoles")          #elif es una estructura de control,que mezcla if y else,esta se suele utiliza
-elif dia == 4:                     #para hacer una estructura de comandos mas limpia y legible. 
-    print("Es jueves")             #sirve principalmente para hacer condiciones una detras de otra (si no se cumple la primera pasa la segunda y asi infinitamente ,y si no se cumple ninguna se ejecuta el else final.)
-elif dia == 5:
-    print("Es viernes")
-else:
-    print("Es fin de semana")
+print(calculadora(5, 5))
 
 
+# Ejemplo 7: conbinar funciones
 
-# Ejemplo 5
+print("##### EJEMPLO 7 ######")
 
-print("\n############# EJEMPLO 5 ##############")
+def getNombre(nombre):
+    texto = f"El nombre es: {nombre}"
+    return texto
+                                                          
+def getApellidos(apellidos):
+    texto = f"Los apellidos son: {apellidos}"
+    return texto
 
-edad_minima = 18
-edad_maxima = 65
-#edad_oficial = int(input("Cual es tu edad oficial?"))
-edad_oficial = 19
-
-if edad_oficial >=18 and edad_oficial <= 65:      #and es un operador logico,este se utiliza para agregar mas condiciones a un if,si no se cumplen todas,no se pasa al if ,y se pasa al else automaticamente
-    print("Esta en edad de trabajar !!")
-else:
-    print("No esta en edad de trabajar")
-
-
-# Ejemplo 6
-
-print("\n############# EJEMPLO 6 ##############")
-
-pais = "España"
-
-if pais == "Mexico" or pais == "España" or pais == "Colombia":          #el operador or ,("o" en español) se utiliza para dar varias opciones en las que tiene que coincider una variable para que if funcione,en caso de que ninguna opcion se cumpla,se activara else
-    print(f"{pais} es un pais de habla hispana !!")
-else:
-    print(f"{pais} no es un pais de habla hispana")
+def devuelveTodo(nombre, apellidos):                                  #en este ejemplo,se crea una funcion que tiene dentro las otras 2 funciones,este metodo se usa para ahorrar tiempo y reutilizar codigo
+    texto = getNombre(nombre) + "\n" + getApellidos(apellidos)
+    return texto
 
 
-# Ejemplo 7
-
-print("\n############# EJEMPLO 7 ##############")
-
-pais = "alemania"
-
-if not(pais == "Mexico" or pais == "España" or pais == "Colombia"):       #el operador not (en español "no") se basa en que si no se cumple lo que esta entre parentesis de mismo,se activa el if,pero si si se cumple,pasa a activarse else,dado que not,si se cumplio
-    print(f"{pais} NO es un pais de habla hispana !!")
-else:
-    print(f"{pais} SI es un pais de habla hispana")
+print(devuelveTodo("Gabriel", "Martinez"))      #En este ejemplo se muestra como poner funcion es en con otras funciones
 
 
-# Ejemplo 8
 
-print("\n############# EJEMPLO 8 ##############")
+# Ejemplo 8: Funciones lambda
 
-pais = "inglaterra"
+print("\n##### EJEMPLO 8 ######")
 
-if pais != "Mexico" and pais != "España" and pais != "Colombia":
-    print(f"{pais} No es un pais de habla hispana !!")                    #el operador and (en español y) sirve para agregar varias variables que se tienen que cumplir una almenos  para que se active if ,y si no  coinciden se activa else
-else:
-    print(f"{pais} Si es un pais de habla hispana")
+dime_el_year = lambda year : f"El año es {year * 50}"     #la funcion lamba sirve para hacer una linea de codigo sola,y se suele utilizar para hacer tareas cortas pero repetitivas, primero se pone la variable,como por ejemplo devolver un dato o hacer una cuenta sencilla
+                                                          # en este caso es "dime_el_year" luego se la iguala a "lambda" luego se le pone el parametro en este caso "year"  y luego se define lo que va a devolver la funcion,en este caso el texto y el year como parametro
+print(dime_el_year(2034))
 
 
+
+
+
+#https://www.udemy.com/course/master-en-python-aprender-python-django-flask-y-tkinter/learn/lecture/18528692#questions/14301890
