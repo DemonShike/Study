@@ -1,50 +1,45 @@
-nombre = "Victor Robles"
-
-#funciones generales
-print(type(nombre))
-
-# Detectar el tipado
-comprobar = isinstance(nombre, int)   #el isinstance se usa poniendo adentro la variable seguida de un tipo,y luego se usa el if para comprobar si la variable es el tipo que pusimos
-if comprobar:
-    print("Esa variable es un string")
-else:
-    print("No es una cadena")
-
-if not isinstance(nombre, float):
-    print("La variable no es un numero con decimales")
-
-# Limpiar espacios
-frase = "     mi contenido      "
-print(frase)
-print(frase.strip()) #esta funcion limpia los espacios
-
-# eliminar variables
-
-year = 2022
-print(year)
-del year     #con esto se puede borrar el valor a una variable
-#print(year)
-
-# comprobar variable vacia
-texto = "ff"
-                                  
-if len(texto) <= 0:                 #esto comprueba el valor de la variable
-    print("La variable esta vacia")
-else:
-    print("La variable tiene contenido" ,len(texto)) #al poner len en el print seguido del valor del texto te da el contenido del mismo
 
 
-# Encontrar caracteres
 
-frase = "La vida es bella"
-print(frase.find("vida"))   #este buscador te dice en que caracter esta la palabra que buscas dentro de la variable que definas
+cantantes = ["2pac", "Drake", "Bad Bunny", "Julio Iglesias" ]
+numeros = [1, 2, 5, 8, 3, 4]
 
-# Reemplazar palabras en un string
-nueva_frase = frase.replace("vida", "moto")   #este cumple la funcion de reemplazador de palabras dentro de una funcion,primero eliges la funcion y luego la palabra que vas a reemplazar y luego la siguiente palabra
-print(nueva_frase)
+# Ordenar
+#print(numeros)
+numeros.sort() #con sort , se pueden ordenar numericamente las listas de numeros xd
+#print(numeros)
 
-# Mayusculas y minusculas
+# Añadir elementos
 
-print(nombre)
-print(nombre.lower())      #con lower vuelves el contenidos de la variable y los parametros elegidos a minuscula y con upper a mayuscula
-print(nombre.upper())
+cantantes.append("Natos y Waor")
+cantantes.insert(1, "David Bisbal") #con este comando a diferencia de append que sirve para agregar elementos a la lista,este tambien lo hace pero debes indicarle si o si,en que parte de la lista lo colocaras
+#print(cantantes)
+
+# Eliminar elementos
+cantantes.pop(1)   #aqui se elige el numero de cual eliminar
+cantantes.remove("Bad Bunny") #y aqui se elimina por su nombre exacto
+#print(cantantes)
+
+# Dar la vuelta
+print(numeros)
+numeros.reverse()  #este comando hace lo que dice,muestra la lista pero alrevez 
+print(numeros) 
+
+# Buscar dentro de una lista
+print("Drake" in cantantes)  #este es un buscador de listas,poner el nombre del elemento,seguido del definido in,y luego la lista donde crees que esta,y dara true o false dependiendo si esta o no
+
+# contar elementos
+print(len(cantantes)) #aqui se pueden contar cuantas variables hay en una lista
+
+
+# cuantas veces aparece un elemento 
+
+print(numeros.count(8)) # este comando te dice cuantos elementos del que elijas hay en una lista 
+
+# Conseguir indice
+print(cantantes.index("Drake")) # esto te muestra el indice en el que esta el elemento que pidas
+
+# Unir listas 
+cantantes.extend(numeros) #aqui primero se pone la lista principal y con extend se agrega entre los parentesis la lista que queremos agregar a la principal,une una lista al lado de la otra
+
+print(cantantes)
