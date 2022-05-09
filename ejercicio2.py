@@ -1,37 +1,127 @@
 """
-Ejercicio 2. Escribir un script que
-nos muestre todos los numeros pares del 1 al 120
+Ejercicio 2. Escribir un programa que añada valores a una lista
+mientras que su longiud sea menor a 120 y luego mostrar la lista
+Plus: Usar while y for
+"""
+
+
+"""
+lista = []
+
+contador = 1
+owo = 0
+
+while contador <= 120:
+    owo = 1 + owo
+    lista.append(owo)                                                                    #Mi ejemplo de programa que añade valores,con while,este lo que hace es un contador que suma un numero a la lista,como no me gustaba que  el numero se repitiera hice que despues de cada vuelta ese numero valiera 1 mas
+    contador += 1
+
+    
+for numeros in lista:
+        print(numeros)
+
+"""
+"""
+
+print("////////////////////////////////////////////////////////////////////////////////////////////////")
+
+lista2 = []
+
+
+for numeros in range (1,120):
+    lista2.append(numeros)                                                                  # Mi ejemplo usando solo el bucle while me costo bastante menos y me inspire bastante en el while
+
+    
+for cantidad in lista2:
+    print(cantidad)
+
+
+print("////////////////////////////////////////////////////////////////////////////////////////////////")
+
+coleccion = []
+
+for contador in range(0, 120):
+    coleccion.append(f"Elemento-{contador}")
+    print("Mostrando el: " + coleccion[contador])                                            # Este ejemplo del profesor es interesante,por que aqui muestra visualmente el contador iterar con un texto,mientras que mi ejemplo lo hacia  iterar pero sin texto, no contemple lo visual
+
+
+print(coleccion)   #habia olvidado que simplemente podia hacer print y el nombre de la lista para mostrarlo
+
+print("////////////////////////////////////////////////////////////////////////////////////////////////")
+
+
+coleccion = []
+x = 0
+
+while x <= 120:
+    coleccion.append(f"elemento-{x}")
+    print("Mostrando el: " + coleccion[x])                                            # Este ejemplo con while es interesante,suma los textos,y el contador para dar sentido visual.
+
+    x += 1
+
+print(coleccion[77])
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 """
 
-numero_par = 2
-numero_maximo = 120
 
-                                                   #script que muestra todos los numeros pares con el comando while,este suma de 2 en 2 hasta llegar a 120 partiendo desde el 2
+"""
+Ejercicio 2. Escribir un programa que añada valores a una lista
+mientras que su longiud sea menor a 120 y luego mostrar la lista
+Plus: Usar while y for
+"""
 
-while numero_par <=120:
-    print(f"Los numeros pares son {numero_par}")
+lista = []
+contador = 0
 
-    numero_par += 2
+while contador <= 119:
+    
+    valor = contador + 1
+    lista.append(valor)
+    contador += 1
 
-print("-----------------------------------------------------")
-
-otro_numero = 2                                               #script que muestra todos los numeros pares con el comando for ambos estan hechos por mi ,este multiplica los numeros impares dando resltados pares 
-
-for numero_tabla in range (1,61):
-    print(f"Tus numeros pares son {numero_tabla*otro_numero}")
+    
 
 
-print("--------------------------------------------")
+for listado in lista:
+    print(listado)
+    
 
-contador = 1
 
-for contador in range (1,121):
-    if contador%2 == 0:
-        print(f"par: {contador}")                    #este script hecho por el profesor,tiene el siguiente funcionamiento,utiliza la variable contador para recorrer los 120 numeros
-    """
-    else:                                            #si esos numeros divididos por 2 dan de resto 0,entonces hara el print y pondra el numero,como adicional puso el else para que muestre los impares
-        print(f"impar: {contador}")
 
-        """
+
+
+
+#https://www.udemy.com/course/master-en-python-aprender-python-django-flask-y-tkinter/learn/lecture/18616762#overview

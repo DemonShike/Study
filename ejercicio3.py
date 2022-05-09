@@ -1,59 +1,74 @@
 """
-Ejercicio 3.Escribir un programa que muestre los cuadrados (un numero 
-multiplicado por si mismo de los 60 primeros numeros naturales)
+Ejercicio 3. Crear un programa que comporuebe si una variable
+esta vacia y si esta vacia, rellenarla con texto en minisculas
+y mostrarlo en mayusculas
+"""
+"""
+variable_vacia = ""
 
-resolverlo con el bucles for y con while
+if variable_vacia != "contenido":
+    variable_vacia = "carlos se la come"
+    if variable_vacia == "carlos se la come":             # Este ejemplo es funcional pero demasiado limitado,solo cumple lo pedido no me enorgullece para nada
+        print("CARLOS SE LA COME")
+
+
+"""
+
+"""
+print("///////////////////////////////////////////////////")
+
+texto = " "
+
+if len(texto.strip()) <= 0:             #aqui lo que sucede es que len comprueba si hay caracteres en la variable,que sucede que si llegan a haber espacios len los tomaria como caracteres,entonces se concatena el comando strip para eliminar esos espacios y que solo queden caracteres como letras o numeros o simbolos.
+    texto = "hola me llamo gabriel"  #aca me confundi y no me funcionaa por que habia utilizado doble igual y era usar  1 solo
+    print(texto.upper())
+
+    #Mostrar el texto
+
+else:
+    print(f"La variable tiene contenido {texto}")
+
+
 
 """
 
 
-# WHILE
-numero_elegido = 0
-
-contador = 0
-                                                                                  # Este es el ejemplo de un contador hecho por mi mismo
-while contador <= 60:
-    print(f"el cuadrado de {numero_elegido} es: {numero_elegido * contador}")
-
-    numero_elegido += 1
-    contador += 1
-    
-
-print("/////////////////////////////////////////////////////////")
-
-
-contador = 0
-
-while contador <= 60:                                                                # Ejemplo de profesor 
-   
-    
-    cuadrado = contador*contador
-    print(f"El cuadrado de {contador} es {cuadrado}")
-    contador += 1
 
 
 
-print("/////////////////////////////////////////////////////////")
-
-# FOR
-
-contador = 0
-
-for contador in range(0,61):
-    print(f"el cuadrado de {contador} es: {contador*contador}")                    # ejemplo con FOR hecho por mi
-
-    contador += 1
 
 
 
-print("///////////////////////////////////////////////////////")
-
-for numero in range(61):
-    cuadrado = numero*numero                                                        # Ejemplo cuadrado con For hecho por el profesor
-    print(f"El cuadrado de {numero} es {cuadrado} ")
 
 
-#    https://www.udemy.com/course/master-en-python-aprender-python-django-flask-y-tkinter/learn/lecture/18527268#questions/10040224
-    
-    
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"""
+Ejercicio 3. Crear un programa que comporuebe si una variable
+esta vacia y si esta vacia, rellenarla con texto en minisculas
+y mostrarlo en mayusculas
+"""
+
+variable_vacia = " "
+
+if len(variable_vacia.strip()) <= 0:
+    variable_vacia = "soy una poderosa variable"
+    print(variable_vacia.upper())
+else:
+    print("La variable no esta vacia")

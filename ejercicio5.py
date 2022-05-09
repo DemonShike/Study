@@ -1,32 +1,99 @@
 """
-Ejercicio5. Hacer un programa que muestre todos los numeros entre
-dos numeros que diga el usuario
+Crear una lista con el contenido de esta tabla:
+ACCION AVENTURA                 DEPORTES 
+GTA     ASSASINS                    FIFA 21
+COD     CRASH                       PRO 21
+PUGB   Prince of persia             MOTO GP21
+
+Mostrar esta informacion ordenada 
+"""
+"""
+
+
+
+
+'''
+for lista in listado_Juego:
+    print(f"Categoria : {lista['categoria']}")
+    print(f"Lista de juegos {lista['juegos']}")
+'''
+  
+#ejemplo del profesor
+
+for juego in listado_Juego:
+    print(f"Categoria : {juego['categoria']}")
+    for lol in juego['juegos']:
+        print(lol)
+
+
 
 """
 
-numero1 = int(input("Dime el primer numero: ")) + 1 #el +1 lo puse para que no mostrara el numero inicial elegido sino el siguiente 
-numero2 = int(input("Dime el segundo numero: "))
-
-contador = 0                                                #Mi ejemplo,es funcional pero tiene un defecto y es que si el mumero1 es mayor al numero2 , el programa no funciona
-
-                                                            #por ahora no soy capaz de crear un metodo que detecte este error y haga alrevez el sistema para que los muestre pero de mayor a menor            
-for contador in range(numero1, numero2):
-    print(f"Los numeros son: {contador}")
-
-    contador += 1   #el contador lo puse pero no es necesario dado que no es comando while,y aca automaticamente iba a ir subiendo de 1 en 1
 
 
-print("////////////////////////////////////////////////////////////////////")
-
-numero1 = int(input("Dime el primer numero: ")) + 1          # a diferencia de mi el si decidio mostrar los 2 numeros elegidos por el usuario dentro de la tabla
-numero2 = int(input("Dime el segundo numero: "))
-
-if numero1<numero2:                                          #este ejemplo hecho por el profesor cuenta con la diferencia de que si el numero 2 es mas chico que el numero 1,manda un mensaje
-    for contador in range(numero1, (numero2 + 1)):           #notificando que no se puede realizar ,y que tiene que ser el numero 2 mayor al numero 1
-        print(contador)
-
-    contador += 1
-else:
-    print("El numero 1 debe ser menor al numero 2")
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"""
+Crear una lista con el contenido de esta tabla:
+ACCION AVENTURA                 DEPORTES 
+GTA     ASSASINS                    FIFA 21
+COD     CRASH                       PRO 21
+PUGB   Prince of persia             MOTO GP21
+
+Mostrar esta informacion ordenada 
+"""
+
+
+listado_Juego = [{
+
+            "categoria" : "ACCION", 
+            "juegos" : ["GTA ", "COD ", "PUGB"]},{
+            "categoria" : "AVENTURA",
+            "juegos" :  ["ASSASINS", "CRASH",  "Prince of persia"]},{
+             "categoria" :  'DEPORTES', 
+            "juegos": ["FIFA 21", "PRO 21", "MOTO GP21"  ]
+            
+            }
+]
+
+
+lista_juegos = [{
+    "CATEGORIA" : "ACCION",
+    "JUEGOS" : ["GTA", "COD", "PUGB"]
+},{ "CATEGORIA" : "AVENTURA",
+    "JUEGOS" : ["ASSASINS", "CRASH", "PRINCE OF PERSIA"]
+},{ "CATEGORIA" : "DEPORTES",
+    "JUEGOS" : ["FIFA 21", "PRO 21", "MOTO GP21"]
+}
+
+]
+
+for categorias in lista_juegos:
+    print(f"Estas en la categoria: {categorias['CATEGORIA']}")
+    print(f"Juegos: {categorias['JUEGOS']}")
+
+
+
+
+
+
+#https://www.udemy.com/course/master-en-python-aprender-python-django-flask-y-tkinter/learn/lecture/18627494#questions
